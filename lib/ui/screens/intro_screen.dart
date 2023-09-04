@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hydroalert/ui/screens/auth_screen.dart';
+import 'package:hydroalert/ui/widgets/sharedpreference.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -120,11 +122,19 @@ class _IntroScreenState extends State<IntroScreen> {
                     ],
                   )
                 : ElevatedButton(
-                    onPressed: () {},
                     child: Text(
                       "Let's get Hydrated!!",
                       style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
+                    onPressed: () {
+                      //onTap:(){
+                        
+                      SharedPref.setGetHydrated();
+
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => AuthScreen(),
+                      ));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFFA2DDF3),
                     ),
