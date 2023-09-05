@@ -128,7 +128,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     ),
                     onPressed: () {
                       //onTap:(){
-                        
+
                       SharedPref.setGetHydrated();
 
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
